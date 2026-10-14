@@ -1,0 +1,10 @@
+packages:
+  - packages/*
+  - examples/*
+
+allowBuilds:
+  esbuild: true
+
+minimumReleaseAgeExclude:
+  - happy-dom@20.14.6
+  - '@anthropic-ai/sdk@0.133.0'

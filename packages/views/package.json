@@ -1,0 +1,64 @@
+{
+  "name": "@mcp-ui-kit/views",
+  "version": "0.1.0",
+  "description": "Generic MCP Apps (ui:// resources) that render @mcp-ui-kit/view-spec views: single-file HTML for table/chart/card/form/plan/diagram, map and Mermaid.",
+  "license": "Apache-2.0",
+  "author": "Leandro Martins (https://github.com/leandro-jm)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandro-jm/mcp-ui-kit.git",
+    "directory": "packages/views"
+  },
+  "homepage": "https://github.com/leandro-jm/mcp-ui-kit/tree/main/packages/views#readme",
+  "bugs": "https://github.com/leandro-jm/mcp-ui-kit/issues",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "generative-ui",
+    "mcp-apps",
+    "ui-resource"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "mcp-ui-kit-source": "./src/node.ts",
+      "types": "./dist/node.d.ts",
+      "import": "./dist/node.js"
+    },
+    "./manifest.json": "./dist/manifest.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsx scripts/build.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@mcp-ui-kit/view-spec": "workspace:*"
+  },
+  "devDependencies": {
+    "@mcp-ui-kit/components": "workspace:*",
+    "@modelcontextprotocol/client": "^2.3.1",
+    "@modelcontextprotocol/core": "^2.3.1",
+    "@modelcontextprotocol/ext-apps": "2.0.3",
+    "@modelcontextprotocol/server": "^2.3.1",
+    "@types/leaflet": "^1.9.22",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "leaflet": "^1.9.4",
+    "mermaid": "^12.1.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tsx": "^4.23.15",
+    "vite": "^8.3.4",
+    "vite-plugin-singlefile": "^2.3.3",
+    "zod": "^4.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

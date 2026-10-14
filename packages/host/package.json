@@ -1,0 +1,80 @@
+{
+  "name": "@mcp-ui-kit/host",
+  "version": "0.1.0",
+  "description": "Thin MCP Apps host for any chat UI: mounts ui:// views of MCP tool results in a sandboxed iframe over the official AppBridge. React component and <mcp-app-view> web component included.",
+  "license": "Apache-2.0",
+  "author": "Leandro Martins (https://github.com/leandro-jm)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandro-jm/mcp-ui-kit.git",
+    "directory": "packages/host"
+  },
+  "homepage": "https://github.com/leandro-jm/mcp-ui-kit/tree/main/packages/host#readme",
+  "bugs": "https://github.com/leandro-jm/mcp-ui-kit/issues",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "generative-ui",
+    "mcp-apps",
+    "host",
+    "sandbox"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "mcp-ui-kit-source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./react": {
+      "mcp-ui-kit-source": "./src/react.tsx",
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    },
+    "./element": {
+      "mcp-ui-kit-source": "./src/element.ts",
+      "types": "./dist/element.d.ts",
+      "import": "./dist/element.js"
+    },
+    "./sandbox.html": "./dist/sandbox.html"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts src/react.tsx src/element.ts --format esm --clean --external react --external @modelcontextprotocol/ext-apps && tsc -p tsconfig.build.json && tsx scripts/build-sandbox.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "2.0.3"
+  },
+  "peerDependencies": {
+    "@modelcontextprotocol/client": "^2.3.1",
+    "@modelcontextprotocol/core": "^2.3.1",
+    "@modelcontextprotocol/server": "^2.3.1",
+    "react": "^19.0.0",
+    "zod": "^4.2.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.3.1",
+    "@modelcontextprotocol/core": "^2.3.1",
+    "@modelcontextprotocol/server": "^2.3.1",
+    "@types/react": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "happy-dom": "^20.14.6",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tsx": "^4.23.15",
+    "zod": "^4.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

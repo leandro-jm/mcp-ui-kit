@@ -1,0 +1,44 @@
+{
+  "name": "@mcp-ui-kit/view-spec",
+  "version": "0.1.0",
+  "description": "ViewSpec contract for rendering MCP tool results as tables, charts, forms, maps and diagrams: types, validation, inference from tool schemas and theme tokens.",
+  "license": "Apache-2.0",
+  "author": "Leandro Martins (https://github.com/leandro-jm)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandro-jm/mcp-ui-kit.git",
+    "directory": "packages/view-spec"
+  },
+  "homepage": "https://github.com/leandro-jm/mcp-ui-kit/tree/main/packages/view-spec#readme",
+  "bugs": "https://github.com/leandro-jm/mcp-ui-kit/issues",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "generative-ui",
+    "view-spec",
+    "json-schema"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "mcp-ui-kit-source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --clean && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
